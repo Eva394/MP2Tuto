@@ -6,40 +6,45 @@ import ch.epfl.cs107.play.io.FileSystem;
 import ch.epfl.cs107.play.window.Image;
 import ch.epfl.cs107.play.window.Window;
 
+/**
+ * Represents an area
+ */
 abstract public class SimpleArea extends Area {
 	private Window window;
 	
 	@Override
 	public int getWidth() {
-		 Image   behaviorMap = window.getImage(ResourcePath.getBehavior(getTitle()), null, false);
-	     return  behaviorMap.getWidth();
-
+		Image behaviorMap = window.getImage( ResourcePath.getBehavior( getTitle() ), null, false );
+		return behaviorMap.getWidth();
+		
 	}
 	
 	@Override
 	public int getHeight() {
-		 Image behaviorMap = window.getImage(ResourcePath.getBehavior(getTitle()), null, false);
-		 return  behaviorMap.getHeight();
-
+		Image behaviorMap = window.getImage( ResourcePath.getBehavior( getTitle() ), null, false );
+		return behaviorMap.getHeight();
+		
 	}
 	
-	 @Override
-	    public boolean begin(Window window, FileSystem fileSystem) {
-		 	this.window = window;
-	        if (super.begin(window, fileSystem)) {
-	            // Set the behavior map
-	            createArea();
-	            return true;
-	        }
-	        return false;
-	    }
+	@Override
+	public boolean begin( Window window, FileSystem fileSystem ) {
+		this.window = window;
+		if ( super.begin( window, fileSystem ) ) {
+			// Set the behavior map
+			createArea();
+			return true;
+		}
+		return false;
+	}
 	
-	 @Override
-	    public final float getCameraScaleFactor() { return 13.f; }
-	 
+	@Override
+	public final float getCameraScaleFactor() {
+		return 10.f;
+	}
+	
 	/**
-     * Create the area by adding all its actors
-     * called by the begin method, when the area starts to play
-     */
+	 * Create the area by adding all its actors
+	 * called by the begin method, when the area starts to play
+	 */
 	protected abstract void createArea();
 }
