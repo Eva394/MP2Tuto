@@ -85,14 +85,14 @@ public class SimpleGhost extends Entity {
 	 * Moves the player up
 	 */
 	public void moveUp() {
-		setCurrentPosition( getPosition().add( 0.f, DELTA ) );
+		setCurrentPosition( getPosition().add( 0.f, -DELTA ) );
 	}
 	
 	/**
 	 * Moves the player down
 	 */
 	public void moveDown() {
-		setCurrentPosition( getPosition().add( 0.f, -DELTA ) );
+		setCurrentPosition( getPosition().add( 0.f, DELTA ) );
 	}
 	
 	/**

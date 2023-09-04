@@ -1,19 +1,18 @@
-package ch.epfl.cs107.play.game.tutos.area.tuto1;
+package ch.epfl.cs107.play.game.tutos.area.tuto2;
 
 import ch.epfl.cs107.play.game.areagame.actor.Background;
 import ch.epfl.cs107.play.game.areagame.actor.Foreground;
 import ch.epfl.cs107.play.game.tutos.actor.SimpleGhost;
-import ch.epfl.cs107.play.game.tutos.area.SimpleArea;
+import ch.epfl.cs107.play.game.tutos.area.Tuto2Area;
 import ch.epfl.cs107.play.math.Vector;
 
 /**
- * Represents a farm area
+ * Represents a village area
  */
-public class Ferme extends SimpleArea {
-	
+public class Village extends Tuto2Area {
 	
 	private static final String SPRITE_NAME = "ghost.2";
-	private static final String VILLAGE_TITLE = "zelda/Ferme";
+	private static final String VILLAGE_TITLE = "zelda/Village";
 	private static final Vector SPRITE_POSITION = new Vector( 18, 7 );
 	private final SimpleGhost player = new SimpleGhost( SPRITE_POSITION, SPRITE_NAME );
 	
@@ -35,7 +34,7 @@ public class Ferme extends SimpleArea {
 	 */
 	@Override
 	protected void createArea() {
-		// registerActor( player );
+		registerActor( player );
 		registerActor( new Background( this ) );
 		registerActor( new Foreground( this ) );
 	}
